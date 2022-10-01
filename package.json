@@ -1,0 +1,15 @@
+{
+  "name": "guard4",
+  "version": "0.0.1",
+  "description": "",
+  "main": "tanrısız.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gorkem",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "setimmediate": "^1.0.5"
+  }
+}
