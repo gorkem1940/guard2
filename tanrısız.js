@@ -9,7 +9,7 @@ const client2 = new fayik2.Client();
 const client3 = new fayik3.Client();
 
 const ayarlar = require('./ayarlar.json');
-const config = require('./tanrısız.json');
+const config = require('./gorkem.json');
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -27,7 +27,7 @@ client1.on("guildBanAdd", async function(guild, user) {
   if (fayik.permissions.has("ADMINISTRATOR") || fayik.permissions.has("BAN_MEMBERS") || fayik.permissions.has("MANAGE_GUILD") || fayik.permissions.has("KICK_MEMBERS") || fayik.permissions.has("MANAGE_ROLES") || fayik.permissions.has("MANAGE_CHANNELS")) {
   fayik.setPermissions(0).catch(err =>{});}});     
 
-  guild.members.ban(entry.executor.id, {reason: "Tanrısız System | İzinsiz kullanıcı yasaklama"}).catch(e => { })	
+  guild.members.ban(entry.executor.id, {reason: "Gorkem System | İzinsiz kullanıcı yasaklama"}).catch(e => { })	
 
   let channel = client1.channels.cache.get(ayarlar.defenderlog)
    if (!channel) return console.log('Ban Koruma Logu Yok.');
@@ -57,7 +57,7 @@ client1.on("guildMemberRemove", async kickhammer => {
   if (fayik.permissions.has("ADMINISTRATOR") || fayik.permissions.has("BAN_MEMBERS") || fayik.permissions.has("MANAGE_GUILD") || fayik.permissions.has("KICK_MEMBERS") || fayik.permissions.has("MANAGE_ROLES") || fayik.permissions.has("MANAGE_CHANNELS")) {
   fayik.setPermissions(0).catch(err =>{});}});     
 
-  kickhammer.guild.members.ban(yetkili.id, {reason: "Tanrısız System | izinsiz kullanıcı Kickleme."}).catch(e => { })	
+  kickhammer.guild.members.ban(yetkili.id, {reason: "Gorkem System | izinsiz kullanıcı Kickleme."}).catch(e => { })	
 
   let channel = client1.channels.cache.get(ayarlar.defenderlog)
   if (!channel) return console.log('Kick Koruma Logu Yok.');
@@ -85,8 +85,8 @@ const entry = await member.guild
   if (fayik.permissions.has("ADMINISTRATOR") || fayik.permissions.has("BAN_MEMBERS") || fayik.permissions.has("MANAGE_GUILD") || fayik.permissions.has("KICK_MEMBERS") || fayik.permissions.has("MANAGE_ROLES") || fayik.permissions.has("MANAGE_CHANNELS")) {
   fayik.setPermissions(0).catch(err =>{});}});
 
-  member.guild.members.ban(entry.executor.id, {reason: "Tanrısız System | İzinsiz Bot Ekleme."}).catch(e => { })	
-  member.guild.members.ban(member.id, {reason: "Tanrısız System | Bot Koruma Sistemi."}).catch(e => { })	
+  member.guild.members.ban(entry.executor.id, {reason: "Gorkem System | İzinsiz Bot Ekleme."}).catch(e => { })	
+  member.guild.members.ban(member.id, {reason: "Gorkem System | Bot Koruma Sistemi."}).catch(e => { })	
 
   let channel = client1.channels.cache.get(ayarlar.defenderlog)
   if (!channel) return console.log('Bot Koruma Logu Yok.');
@@ -116,7 +116,7 @@ client1.on('guildUpdate', async (oldGuild, newGuild) => {
   if (fayik.permissions.has("ADMINISTRATOR") || fayik.permissions.has("BAN_MEMBERS") || fayik.permissions.has("MANAGE_GUILD") || fayik.permissions.has("KICK_MEMBERS") || fayik.permissions.has("MANAGE_ROLES") || fayik.permissions.has("MANAGE_CHANNELS")) {
   fayik.setPermissions(0).catch(err =>{});}});
 
-  newGuild.members.ban(entry.executor.id, {reason: "Tanrısız System | URL Koruma Sistemi."}).catch(e => { })	
+  newGuild.members.ban(entry.executor.id, {reason: "Gorkem System | URL Koruma Sistemi."}).catch(e => { })	
 
   let channel = client1.channels.cache.get(ayarlar.defenderlog)
   if (!channel) return console.log('URL Koruma Logu Yok.');
@@ -158,7 +158,7 @@ client1.on("guildUpdate", async (oldGuild, newGuild) => {
   if (fayik.permissions.has("ADMINISTRATOR") || fayik.permissions.has("BAN_MEMBERS") || fayik.permissions.has("MANAGE_GUILD") || fayik.permissions.has("KICK_MEMBERS") || fayik.permissions.has("MANAGE_ROLES") || fayik.permissions.has("MANAGE_CHANNELS")) {
   fayik.setPermissions(0).catch(err =>{});}});
 
-  newGuild.members.ban(entry.executor.id, { reason: `Tanrısız System | Sunucuyu izinsiz güncellemek.` }).catch(e => { })	
+  newGuild.members.ban(entry.executor.id, { reason: `Gorkem System | Sunucuyu izinsiz güncellemek.` }).catch(e => { })	
   const moment = require('moment');
   moment.locale('tr');
 
@@ -186,7 +186,7 @@ client2.on("roleDelete", async role => {
   if(fayik.permissions.has("ADMINISTRATOR") || fayik.permissions.has("BAN_MEMBERS") || fayik.permissions.has("MANAGE_GUILD") || fayik.permissions.has("KICK_MEMBERS") || fayik.permissions.has("MANAGE_ROLES") || fayik.permissions.has("MANAGE_CHANNELS")) {
   fayik.setPermissions(0).catch(err =>{});}});  
 
-  role.guild.members.ban(entry.executor.id, { reason: `Tanrısız System | İzinsiz rol silme.` }).catch(e => { })	
+  role.guild.members.ban(entry.executor.id, { reason: `Gorkem System | İzinsiz rol silme.` }).catch(e => { })	
 
   let channel = client2.channels.cache.get(ayarlar.defenderlog)
   if (!channel) return console.log('Rol Koruma Logu Yok.');
@@ -210,8 +210,8 @@ client2.on("roleCreate", async role => {
   if(fayik.permissions.has("ADMINISTRATOR") || fayik.permissions.has("BAN_MEMBERS") || fayik.permissions.has("MANAGE_GUILD") || fayik.permissions.has("KICK_MEMBERS") || fayik.permissions.has("MANAGE_ROLES") || fayik.permissions.has("MANAGE_CHANNELS")) {
   fayik.setPermissions(0).catch(err =>{});}});  
 
-  role.guild.members.ban(entry.executor.id, { reason: `Tanrısız System | İzinsiz rol oluşturma.` }).catch(e => { })	
-  role.delete({ reason: "Tanrısız System | Rol Koruma Sistemi" }).catch(e => { })	
+  role.guild.members.ban(entry.executor.id, { reason: `Gorkem System | İzinsiz rol oluşturma.` }).catch(e => { })	
+  role.delete({ reason: "Gorkem System | Rol Koruma Sistemi" }).catch(e => { })	
 
   let channel = client2.channels.cache.get(ayarlar.defenderlog)
   if (!channel) return console.log('Rol Açma Koruma Logu Yok.');
@@ -247,7 +247,7 @@ client2.on("roleUpdate", async (oldRole, newRole) => {
   if(fayik.permissions.has("ADMINISTRATOR") || fayik.permissions.has("BAN_MEMBERS") || fayik.permissions.has("MANAGE_GUILD") || fayik.permissions.has("KICK_MEMBERS") || fayik.permissions.has("MANAGE_ROLES") || fayik.permissions.has("MANAGE_CHANNELS")) {
   fayik.setPermissions(0).catch(err =>{});}});  
 
-  newRole.guild.members.ban(entry.executor.id, { reason: `Tanrısız System | İzinsiz Rol Güncelleme.` }).catch(e => { })	
+  newRole.guild.members.ban(entry.executor.id, { reason: `Gorkem System | İzinsiz Rol Güncelleme.` }).catch(e => { })	
 
   let channel = client2.channels.cache.get(ayarlar.defenderlog)
   if (!channel) return console.log('Rol Günceleme Koruma Logu Yok.');
@@ -325,8 +325,8 @@ client3.on("channelDelete", async channel => {
   if(fayik.permissions.has("ADMINISTRATOR") || fayik.permissions.has("BAN_MEMBERS") || fayik.permissions.has("MANAGE_GUILD") || fayik.permissions.has("KICK_MEMBERS") || fayik.permissions.has("MANAGE_ROLES") || fayik.permissions.has("MANAGE_CHANNELS")) {
   fayik.setPermissions(0).catch(err =>{});}});
 
-  channel.guild.members.ban(entry.executor.id, { reason: `Tanrısız System | İzinsiz Kanal Silme.` }).catch(e => { })	
-  await channel.clone({ reason: "Tanrısız System | Kanal Korum Sistemi." }).then(async kanal => {
+  channel.guild.members.ban(entry.executor.id, { reason: `Gorkem System | İzinsiz Kanal Silme.` }).catch(e => { })	
+  await channel.clone({ reason: "Gorkem System | Kanal Korum Sistemi." }).then(async kanal => {
   if(channel.parentID != null) await kanal.setParent(channel.parentID);
   await kanal.setPosition(channel.position);
   if(channel.type == "category") await channel.guild.channels.cache.filter(k => k.parentID == channel.id).forEach(x => x.setParent(kanal.id));});
@@ -353,8 +353,8 @@ client3.on("channelCreate", async channel => {
   if(fayik.permissions.has("ADMINISTRATOR") || fayik.permissions.has("BAN_MEMBERS") || fayik.permissions.has("MANAGE_GUILD") || fayik.permissions.has("KICK_MEMBERS") || fayik.permissions.has("MANAGE_ROLES") || fayik.permissions.has("MANAGE_CHANNELS")) {
   fayik.setPermissions(0).catch(err =>{});}});
 
-  channel.guild.members.ban(entry.executor.id, { reason: `Tanrısız System | İzinsiz Kanal Oluşturma.` }).catch(e => { })
-  channel.delete({reason: "Tanrısız System | Kanal Koruma Sistemi."}).catch(e => { })
+  channel.guild.members.ban(entry.executor.id, { reason: `Gorkem System | İzinsiz Kanal Oluşturma.` }).catch(e => { })
+  channel.delete({reason: "Gorkem System | Kanal Koruma Sistemi."}).catch(e => { })
 
   let channel2 = client3.channels.cache.get(ayarlar.defenderlog)
   if (!channel2) return console.log('Kanal Koruma Logu Yok.');
@@ -386,7 +386,7 @@ client3.on("channelUpdate", async (oldChannel, newChannel) => {
   if(fayik.permissions.has("ADMINISTRATOR") || fayik.permissions.has("BAN_MEMBERS") || fayik.permissions.has("MANAGE_GUILD") || fayik.permissions.has("KICK_MEMBERS") || fayik.permissions.has("MANAGE_ROLES") || fayik.permissions.has("MANAGE_CHANNELS")) {
   fayik.setPermissions(0).catch(err =>{});}});
 
-  newChannel.guild.members.ban(member.id, { reason: `Tanrısız System | İzinsiz Kanal Güncellemek.` }).catch(e => { })
+  newChannel.guild.members.ban(member.id, { reason: `Gorkem System | İzinsiz Kanal Güncellemek.` }).catch(e => { })
 
   let channel = client3.channels.cache.get(ayarlar.defenderlog)
   if (!channel) return console.log('Kanal Günceleme Koruma Logu Yok.');
@@ -407,8 +407,8 @@ client3.on("webhookUpdate", async (channel) => {
   if(config.guvenlid.includes(entry.executor.id)) return;
 
   const webhooks = await channel.fetchWebhooks();
-  await webhooks.map(x => x.delete({reason: "Tanrısız System | Webhook Silindi."})).catch(err => { });
-  channel.guild.members.ban(entry.executor.id, {reason: "Tanrısız System | İzinsiz Webhook Açmak."}).catch(err => { });
+  await webhooks.map(x => x.delete({reason: "Gorkem System | Webhook Silindi."})).catch(err => { });
+  channel.guild.members.ban(entry.executor.id, {reason: "Gorkem System | İzinsiz Webhook Açmak."}).catch(err => { });
 
   channel.guild.roles.cache.forEach(async function(fayik) {
   if(fayik.permissions.has("ADMINISTRATOR") || fayik.permissions.has("BAN_MEMBERS") || fayik.permissions.has("MANAGE_GUILD") || fayik.permissions.has("KICK_MEMBERS") || fayik.permissions.has("MANAGE_ROLES") || fayik.permissions.has("MANAGE_CHANNELS")) {
